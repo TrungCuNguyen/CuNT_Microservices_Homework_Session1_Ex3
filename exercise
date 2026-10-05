@@ -1,0 +1,30 @@
+1. Phân tích Ưu điểm của Domain-Driven Design (DDD)
+
+Sự gắn kết chặt chẽ giữa Nghiệp vụ (Business) và Code:
+* DDD đặt trọng tâm vào mô hình miền (Domain Model). Thay vì thiết kế hướng dữ liệu (Database-First) khiến logic nghiệp vụ bị phân tán rải rác ở khắp các tầng, DDD tập trung đóng gói toàn bộ quy tắc nghiệp vụ cốt lõi (Core Logic) vào bên trong các Entity, Value Object và Aggregates.
+* Giúp code phản ánh đúng thực tế vận hành của doanh nghiệp, dễ bảo trì và giảm thiểu tối đa rủi ro hiểu sai yêu cầu khi phát triển tính năng mới.
+
+Ngôn ngữ chung (Ubiquitous Language)
+* Xóa bỏ rào cản ngôn ngữ giữa đội ngũ kỹ thuật (Developers) và đội ngũ nghiệp vụ/chuyên gia miền (Domain Experts / Business Analysts).
+* Cả hai bên đều sử dụng chung một bộ từ vựng thống nhất trong mọi cuộc họp, tài liệu thiết kế và ngay trong tên lớp, tên phương thức của source code.
+* Tránh tình trạng "tam sao thất bản" khi chuyển giao yêu cầu từ ý tưởng kinh doanh sang mã nguồn.
+
+Phân chia ranh giới rõ ràng (Bounded Context):
+* Giúp giải quyết bài toán "đống bùn lầy" (Big Ball of Mud) bằng cách chia hệ thống thành các không gian nghiệp vụ độc lập (Bounded Contexts). Mỗi ngữ cảnh có mô hình dữ liệu và thuật ngữ riêng, tránh việc một model bị phình to và quá tải chức năng.
+
+2. Phân tích Nhược điểm và Khó khăn khi áp dụng DDD
+
+Đường cong học tập cao (High Learning Curve):
+* DDD đòi hỏi tư duy lập trình hướng đối tượng (OOP) vững chắc và việc nắm vững hàng loạt khái niệm phức tạp (Aggregate, Entity, Value Object, Repository, Domain Event, Factory...).
+* Đội ngũ phát triển cần nhiều thời gian để thay đổi thói quen tư duy từ "Database-First" sang "Domain-First".
+
+Tốn thời gian và chi phí cho các buổi hội thảo nghiệp vụ (Domain Discovery):
+* Để xây dựng đúng mô hình miền, team bắt buộc phải tổ chức các buổi Event Storming, Workshop chuyên sâu với Domain Experts.
+* Điều này đòi hỏi sự cam kết tham gia nghiêm túc từ phía chuyên gia nghiệp vụ của doanh nghiệp, tốn nhiều thời gian thảo luận ban đầu trước khi bắt tay vào viết dòng code đầu tiên.
+
+Nguy cơ Over-Engineering với dự án đơn giản:
+* Nếu ứng dụng chỉ có các chức năng CRUD cơ bản (Create - Read - Update - Delete) hoặc nghiệp vụ không quá phức tạp, việc áp dụng DDD sẽ gây ra sự cồng kềnh, tốn thời gian và lãng phí tài nguyên không cần thiết.
+
+3. Kết luận về bản chất của DDD
+DDD không đơn thuần là một bộ nguyên tắc hay kỹ thuật viết code (Technical Pattern), mà bản chất là sự tập trung tối đa vào "Core Logic" và giá trị kinh doanh cốt lõi của doanh nghiệp.
+Nó giúp doanh nghiệp và đội ngũ kỹ thuật đồng hành trên cùng một con thuyền, biến mã nguồn phần mềm thành tài sản phản ánh chính xác nhất hoạt động vận hành của doanh nghiệp.
